@@ -8,10 +8,12 @@ from pipeline.silver_transform import (
     normaliser_experience,
     normaliser_dates,
 )
+from pipeline.silver_nlp import extraire_competences
 
 
 DATA_LAKE_ROOT = "data_lake"
 SOURCE_OFFRES = "data/raw/offres_emploi_it_maroc.json"
+REFERENTIEL_COMPETENCES = "data/raw/referentiel_competences_it.json"
 
 
 def main():
@@ -26,22 +28,9 @@ def main():
     df = normaliser_experience(df)
     df = normaliser_dates(df)
 
-    print(df[[
-        "id_offre",
-        "ville",
-        "ville_std",
-        "type_contrat",
-        "type_contrat_std",
-        "titre_poste",
-        "profil_normalise",
-        "salaire_brut",
-        "salaire_median_mad",
-        "experience_requise",
-        "experience_min_ans",
-        "annee",
-        "mois",
-        "date_valide"
-    ]])
+    df_competences = extraire_competences(df, REFERENTIEL_COMPETENCES)
+
+    print(df_competences.head(20))
 
 
 if __name__ == "__main__":
