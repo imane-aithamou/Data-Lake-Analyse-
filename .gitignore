@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+data_lake/
+data/generated/
+*.parquet
+*.csv
+*.json
+!data/raw/referentiel_competences_it.json
+!data/raw/entreprises_it_maroc.csv
