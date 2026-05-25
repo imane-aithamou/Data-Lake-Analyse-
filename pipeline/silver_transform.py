@@ -252,3 +252,26 @@ def normaliser_dates(df: pd.DataFrame) -> pd.DataFrame:
 
     print("[SILVER] Dates normalisees")
     return df
+
+
+
+
+def sauvegarder_silver(df_offres: pd.DataFrame, df_competences: pd.DataFrame, data_lake_root: str):
+    """
+    Sauvegarde les donnees Silver au format Parquet.
+    """
+
+    silver_path = Path(data_lake_root) / "silver"
+
+    chemin_offres = silver_path / "offres_clean" / "offres_clean.parquet"
+    chemin_offres.parent.mkdir(parents=True, exist_ok=True)
+
+    df_offres.to_parquet(chemin_offres, index=False, compression="snappy")
+
+    chemin_competences = silver_path / "competences_extraites" / "competences.parquet"
+    chemin_competences.parent.mkdir(parents=True, exist_ok=True)
+
+    df_competences.to_parquet(chemin_competences, index=False, compression="snappy")
+
+    print(f"[SILVER] Offres sauvegardees : {chemin_offres}")
+    print(f"[SILVER] Competences sauvegardees : {chemin_competences}")

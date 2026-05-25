@@ -7,6 +7,7 @@ from pipeline.silver_transform import (
     normaliser_salaires,
     normaliser_experience,
     normaliser_dates,
+    sauvegarder_silver,
 )
 from pipeline.silver_nlp import extraire_competences
 
@@ -30,7 +31,7 @@ def main():
 
     df_competences = extraire_competences(df, REFERENTIEL_COMPETENCES)
 
-    print(df_competences.head(20))
+    sauvegarder_silver(df, df_competences, DATA_LAKE_ROOT)
 
 
 if __name__ == "__main__":
