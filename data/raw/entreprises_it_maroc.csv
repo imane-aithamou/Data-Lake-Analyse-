@@ -1,0 +1,9 @@
+nom_entreprise,secteur,taille,ville_siege,site_web,type
+TechMaroc SARL,Informatique,PME,Casablanca,https://techmaroc.ma,SSII
+DataNorth,Data & Analytics,Startup,Tanger,https://datanorth.ma,Produit
+Atlas Digital,Conseil IT,ETI,Rabat,https://atlasdigital.ma,Conseil
+Maghreb Telecom,Télécom,Grande Entreprise,Casablanca,https://maghrebtelecom.ma,Telecom
+FinData Bank,Banque,Grande Entreprise,Casablanca,https://findata.ma,Banque
+Tanger AI Lab,Intelligence Artificielle,Startup,Tanger,https://tangerailab.ma,Produit
+Rabat Solutions,Informatique,PME,Rabat,https://rabatsolutions.ma,SSII
+Maroc Cloud Services,Cloud,ETI,Casablanca,https://maroccloud.ma,Conseil
