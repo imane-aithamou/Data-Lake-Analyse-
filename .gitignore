@@ -10,5 +10,6 @@ data/generated/
 *.parquet
 *.csv
 *.json
+!data/raw/offres_emploi_it_maroc.json
 !data/raw/referentiel_competences_it.json
 !data/raw/entreprises_it_maroc.csv
